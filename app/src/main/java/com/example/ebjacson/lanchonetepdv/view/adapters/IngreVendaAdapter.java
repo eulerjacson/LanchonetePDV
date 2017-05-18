@@ -33,6 +33,7 @@ public class IngreVendaAdapter extends RecyclerView.Adapter<IngreVendaAdapter.Vi
         this.mContext = mContext;
         this.ingredienteList = ingredienteList;
         this.itemVenda = itemVenda;
+
     }
 
     @Override

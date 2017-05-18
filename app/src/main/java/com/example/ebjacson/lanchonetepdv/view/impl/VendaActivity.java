@@ -53,6 +53,7 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
         vendaPresenter = new VendaPresenter(this);
         vendaPresenter.carregarPagerTab();
         Util.itemVendaList = new ArrayList<>();
+        Util.ingItVendaList = new ArrayList<>();
 
     }
 

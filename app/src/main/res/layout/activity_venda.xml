@@ -40,6 +40,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_done"
-        android:background="@drawable/button_click" />
+        android:background="@drawable/button_click"
+        app:backgroundTint="@color/fab_color" />
 
 </android.support.design.widget.CoordinatorLayout>

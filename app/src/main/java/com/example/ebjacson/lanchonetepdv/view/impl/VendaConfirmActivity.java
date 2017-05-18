@@ -30,6 +30,8 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
     FloatingActionButton fab;
     @BindView(R.id.rvItemConfirm)
     RecyclerView rvItemConfirm;
+    @BindView(R.id.fab2)
+    FloatingActionButton fab2;
 
     VendaConfirmPresenter vendaConfirmPresenter;
     ItensConfirmAdapter itensConfirmAdapter;
@@ -52,6 +54,11 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
         vendaConfirmPresenter.salvarItens(Util.venda, Util.itemVendaList);
     }
 
+    @OnClick(R.id.fab2)
+    public void fab2Click(View view) {
+        chamaVendaActivity();
+    }
+
     @Override
     public void montaRecyclerItens(List<ItemVenda> itemVendaList) {
         itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList);
@@ -63,6 +70,12 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
     public void chamaMapaMesasActivity() {
         vendaConfirmPresenter.limparVenda();
         Intent intent = new Intent(this, MapaMesasActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void chamaVendaActivity() {
+        Intent intent = new Intent(this, VendaActivity.class);
         startActivity(intent);
     }
 }

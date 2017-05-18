@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.GrupoProduto;
 import com.example.ebjacson.lanchonetepdv.model.Mesas;
+import com.example.ebjacson.lanchonetepdv.model.Produto;
 import com.example.ebjacson.lanchonetepdv.presenter.impl.MapaMesasPresenter;
 import com.example.ebjacson.lanchonetepdv.view.IMapaMesasActivity;
 import com.example.ebjacson.lanchonetepdv.view.adapters.MapaMesasAdapter;

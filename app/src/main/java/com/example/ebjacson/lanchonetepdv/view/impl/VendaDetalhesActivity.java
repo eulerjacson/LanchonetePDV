@@ -1,5 +1,6 @@
 package com.example.ebjacson.lanchonetepdv.view.impl;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,8 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
     FloatingActionButton fab;
     @BindView(R.id.rvItemConfirm)
     RecyclerView rvItemConfirm;
+    @BindView(R.id.fab2)
+    FloatingActionButton fab2;
 
     VendaConfirmPresenter vendaConfirmPresenter;
     ItensConfirmAdapter itensConfirmAdapter;
@@ -50,6 +53,11 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
         chamaRecebimentoActivity();
     }
 
+    @OnClick(R.id.fab2)
+    public void fab2Click(View view) {
+        chamaVendaActivity();
+    }
+
     @Override
     public void montaRecyclerItens(List<ItemVenda> itemVendaList) {
         itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList);
@@ -67,5 +75,11 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
     @Override
     public void chamaMapaMesasActivity() {
         ///
+    }
+
+    @Override
+    public void chamaVendaActivity() {
+        Intent intent = new Intent(this, VendaActivity.class);
+        startActivity(intent);
     }
 }

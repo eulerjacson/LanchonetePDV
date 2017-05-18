@@ -69,7 +69,6 @@ public class MapaMesasAdapter extends BaseAdapter implements IMapaMesasAdapter{
             @Override
             public void onClick(View v) {
                 if(dao.getStatusmesa().equals(0)) {
-                    Toast.makeText(mContext, dao.getDescmesa(), Toast.LENGTH_SHORT).show();
                     criaVenda(dao);
                     mudaStatusOcupadoMesa(dao);
                     callVendaActivity(dao.getId());

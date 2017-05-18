@@ -10,4 +10,5 @@ public interface IVendaProdutosAdapter {
     String criaAdicionaItem(boolean ehPrimeiro, Produto produto);
     String removeDiminuiItem(Produto produto);
     String recuperItemTab(Produto produto);
+    void abreDialogDetalhes(Produto produto);
 }

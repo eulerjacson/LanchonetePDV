@@ -11,4 +11,5 @@ import java.util.List;
 public interface IVendaConfirmActivity {
     void montaRecyclerItens(List<ItemVenda> itemVendaList);
     void chamaMapaMesasActivity();
+    void chamaVendaActivity();
 }

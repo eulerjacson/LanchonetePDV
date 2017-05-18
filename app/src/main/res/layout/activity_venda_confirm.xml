@@ -27,7 +27,7 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_done"
-        android:background="@drawable/button_click" />
+        app:backgroundTint="@color/fab_color"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
@@ -43,7 +43,7 @@
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/fab"
         app:layout_anchorGravity="top"
-        android:background="@drawable/button_click" />
+        app:backgroundTint="@color/fab_color"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvItemConfirm"

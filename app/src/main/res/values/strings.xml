@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lanchonete PDV</string>
+    <string name="title_activity_venda">VendaActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="title_activity_venda_confirm">VendaConfirmActivity</string>
+    <string name="confirmvenda">Confirmar Venda</string>
+    <string name="venda">Venda</string>
+    <string name="detalhesvenda">Detalhes Venda</string>
+</resources>

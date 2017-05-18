@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btMaisPV"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="+"
+        android:background="@drawable/button_click"
+        android:textSize="25sp"
+        android:textColor="@color/md_white_1000" />
+
+    <TextView
+        android:id="@+id/tvNomeProPV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:layout_alignBaseline="@+id/btMaisPV"
+        android:layout_alignBottom="@+id/btMaisPV"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btMenosPV"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="-"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_click"
+        android:textSize="25sp"
+        android:textColor="@color/md_white_1000"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:text="TextView"
+        android:background="@color/md_grey_700"
+        android:layout_below="@+id/btMaisPV"/>
+</RelativeLayout>

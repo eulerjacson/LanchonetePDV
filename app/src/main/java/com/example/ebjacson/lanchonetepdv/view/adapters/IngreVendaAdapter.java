@@ -48,16 +48,21 @@ public class IngreVendaAdapter extends RecyclerView.Adapter<IngreVendaAdapter.Vi
     public void onBindViewHolder(final ViewHolder viewHolder, int position) {
 
         final Ingrediente dao = ingredienteList.get(position);
+        final IngItVenda ingItVenda = montaItem(dao);
 
         viewHolder.checkBox.setText(dao.getDescing());
+
+        if(Util.ingItVendaList.contains(ingItVenda)){
+            viewHolder.checkBox.setChecked(true);
+        }
 
         viewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    Util.ingItVendaList.add(montaItem(dao));
+                    Util.ingItVendaList.add(ingItVenda);
                 }else{
-                    Util.ingItVendaList.remove(montaItem(dao));
+                    Util.ingItVendaList.remove(ingItVenda);
                 }
             }
         });

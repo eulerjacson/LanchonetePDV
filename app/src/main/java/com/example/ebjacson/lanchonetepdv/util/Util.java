@@ -2,6 +2,7 @@ package com.example.ebjacson.lanchonetepdv.util;
 
 import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
+import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Usuario;
 import com.example.ebjacson.lanchonetepdv.model.Venda;
 
@@ -16,4 +17,5 @@ public abstract class Util {
     public static Venda venda;
     public static List<ItemVenda> itemVendaList;
     public static List<IngItVenda> ingItVendaList;
+    public static List<ObsItVenda> obsItVendaList;
 }

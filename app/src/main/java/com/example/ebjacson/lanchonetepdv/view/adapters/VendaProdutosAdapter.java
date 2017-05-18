@@ -18,6 +18,7 @@ import com.example.ebjacson.lanchonetepdv.model.Produto;
 import com.example.ebjacson.lanchonetepdv.model.Venda;
 import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IVendaProdutosAdapter;
+import com.example.ebjacson.lanchonetepdv.view.impl.DialogDetalhes;
 
 import java.util.Date;
 import java.util.List;
@@ -175,32 +176,6 @@ public class VendaProdutosAdapter extends RecyclerView.Adapter<VendaProdutosAdap
 
         ViewHolder(View view) {
             super(view);
-            ButterKnife.bind(this, view);
-        }
-    }
-
-    public class DialogDetalhes extends AlertDialog {
-
-        @BindView(R.id.rvIngredientes)
-        RecyclerView rvIngredientes;
-        @BindView(R.id.rvObservacoes)
-        RecyclerView rvObservacoes;
-
-        ItemVenda itemVenda;
-
-        IngreVendaAdapter ingreVendaAdapter;
-
-        protected DialogDetalhes(@NonNull Context context, ItemVenda iv) {
-            super(context);
-            itemVenda = iv;
-            ingreVendaAdapter = new IngreVendaAdapter(mContext, Ingrediente.find(Ingrediente.class, "statusing = ?", "1"), iv);
-        }
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.dialog_detalhes);
-            View view = View.inflate(getContext(), R.layout.dialog_detalhes, null);
             ButterKnife.bind(this, view);
         }
     }

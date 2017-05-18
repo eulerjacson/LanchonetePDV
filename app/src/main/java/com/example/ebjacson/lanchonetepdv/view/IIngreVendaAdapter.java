@@ -9,5 +9,4 @@ import com.example.ebjacson.lanchonetepdv.model.Ingrediente;
 
 public interface IIngreVendaAdapter {
     IngItVenda montaItem(Ingrediente dao);
-
 }

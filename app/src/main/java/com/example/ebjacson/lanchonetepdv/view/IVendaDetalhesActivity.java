@@ -9,6 +9,6 @@ import java.util.List;
  */
 
 public interface IVendaDetalhesActivity {
-    void montaRecyclerItens(List<ItemVenda> itemVendaList);
+    void montaRecyclerItens(List<ItemVenda> itemVendaList, Boolean ehValores);
     void chamaRecebimentoActivity();
 }

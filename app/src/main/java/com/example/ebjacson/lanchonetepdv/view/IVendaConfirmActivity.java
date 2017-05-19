@@ -9,7 +9,7 @@ import java.util.List;
  */
 
 public interface IVendaConfirmActivity {
-    void montaRecyclerItens(List<ItemVenda> itemVendaList);
+    void montaRecyclerItens(List<ItemVenda> itemVendaList, Boolean ehValores);
     void chamaMapaMesasActivity();
     void chamaVendaActivity();
 }

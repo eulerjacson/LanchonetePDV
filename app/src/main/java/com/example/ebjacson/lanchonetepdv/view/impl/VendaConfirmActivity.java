@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.ebjacson.lanchonetepdv.R;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
@@ -60,8 +63,8 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
     }
 
     @Override
-    public void montaRecyclerItens(List<ItemVenda> itemVendaList) {
-        itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList);
+    public void montaRecyclerItens(List<ItemVenda> itemVendaList, Boolean ehValores) {
+        itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList, ehValores);
         rvItemConfirm.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvItemConfirm.setAdapter(itensConfirmAdapter);
     }
@@ -77,5 +80,20 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
     public void chamaVendaActivity() {
         Intent intent = new Intent(this, VendaActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("fechar").setIcon(R.drawable.ic_money).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getTitle().equals("fechar")) {
+            vendaConfirmPresenter.carregarRecyclerItensValores();
+        }
+
+        return  super.onOptionsItemSelected(item);
     }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 
 public interface IVendaConfirmPresenter {
     void carregarRecyclerItens();
+    void carregarRecyclerItensValores();
     void atualizarValoresVenda(Venda venda, List<ItemVenda> itemVendaList);
     void salvarItens(Venda venda, List<ItemVenda> itemVendaList, List<IngItVenda> ingItVendaList, List<ObsItVenda> obsItVendaList);
     void limparVenda();

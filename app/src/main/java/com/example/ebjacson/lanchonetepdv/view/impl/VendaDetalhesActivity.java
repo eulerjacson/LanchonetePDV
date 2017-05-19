@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.ebjacson.lanchonetepdv.R;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
@@ -45,7 +48,7 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
         setSupportActionBar(toolbar);
 
         vendaConfirmPresenter = new VendaConfirmPresenter(this);
-        vendaConfirmPresenter.carregarRecyclerItens();
+        vendaConfirmPresenter.carregarRecyclerItensValores();
     }
 
     @OnClick(R.id.fab)
@@ -59,8 +62,8 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
     }
 
     @Override
-    public void montaRecyclerItens(List<ItemVenda> itemVendaList) {
-        itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList);
+    public void montaRecyclerItens(List<ItemVenda> itemVendaList, Boolean ehValores) {
+        itensConfirmAdapter = new ItensConfirmAdapter(this, itemVendaList, ehValores);
         rvItemConfirm.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvItemConfirm.setAdapter(itensConfirmAdapter);
     }

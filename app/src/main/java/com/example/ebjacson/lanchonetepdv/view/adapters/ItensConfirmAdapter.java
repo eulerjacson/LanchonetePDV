@@ -27,10 +27,12 @@ import butterknife.ButterKnife;
 public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapter.ViewHolder> implements IItensConfirmAdapter {
     private Context mContext;
     public List<ItemVenda> itemVendaList;
+    private Boolean ehValores;
 
-    public ItensConfirmAdapter(Context mContext, List<ItemVenda> itemVendaList) {
+    public ItensConfirmAdapter(Context mContext, List<ItemVenda> itemVendaList, Boolean ehValores) {
         this.mContext = mContext;
         this.itemVendaList = itemVendaList;
+        this.ehValores = ehValores;
     }
 
     @Override
@@ -62,6 +64,7 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
             @Override
             public void onClick(View v) {
                 viewHolder.btMaisPV.setText(adicionaQtdItem(dao));
+                mostraValores(viewHolder, dao);
             }
         });
 
@@ -73,6 +76,17 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
                 }
             }
         });
+
+        mostraValores(viewHolder, dao);
+    }
+
+    @Override
+    public void mostraValores(ViewHolder viewHolder, ItemVenda dao) {
+        if(ehValores){
+            viewHolder.btMenosPV.setEnabled(false);
+            viewHolder.btMenosPV.setText(dao.getVlrtotalitven().toString());
+            viewHolder.btMenosPV.setTextSize(16);
+        }
     }
 
     @Override
@@ -140,7 +154,8 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
             viewHolder.btMaisPV.setEnabled(false);
             viewHolder.btMenosPV.setEnabled(false);
             viewHolder.btMaisPV.setBackground(mContext.getResources().getDrawable(R.drawable.button_click_verde));
-            viewHolder.btMenosPV.setVisibility(View.GONE);
+            //viewHolder.btMenosPV.setVisibility(View.GONE);
+            viewHolder.btMenosPV.setBackground(mContext.getResources().getDrawable(R.drawable.button_click_verde));
         }
     }
 

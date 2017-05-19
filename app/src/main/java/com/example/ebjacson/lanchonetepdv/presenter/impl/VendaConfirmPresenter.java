@@ -30,7 +30,12 @@ public class VendaConfirmPresenter implements IVendaConfirmPresenter {
 
     @Override
     public void carregarRecyclerItens() {
-        iVendaConfirmActivity.montaRecyclerItens(itemVendaList);
+        iVendaConfirmActivity.montaRecyclerItens(itemVendaList, false);
+    }
+
+    @Override
+    public void carregarRecyclerItensValores() {
+        iVendaConfirmActivity.montaRecyclerItens(itemVendaList, true);
     }
 
     @Override

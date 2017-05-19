@@ -1,6 +1,7 @@
 package com.example.ebjacson.lanchonetepdv.view.impl;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -19,7 +20,6 @@ import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IVendaActivity;
 import com.example.ebjacson.lanchonetepdv.view.adapters.VendaGruposAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -38,6 +38,8 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
     FloatingActionButton fab;
     @BindView(R.id.main_content)
     CoordinatorLayout mainContent;
+    @BindView(R.id.tabsGrupo)
+    com.astuetz.PagerSlidingTabStrip tabs;
 
     private VendaGruposAdapter mVendaGruposAdapter;
 
@@ -49,6 +51,10 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
         setContentView(R.layout.activity_venda);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
+        tabs.setTextColor(Color.WHITE);
+        tabs.setIndicatorColor(Color.WHITE);
+        tabs.setDividerColor(Color.WHITE);
 
         vendaPresenter = new VendaPresenter(this);
         vendaPresenter.carregarPagerTab();
@@ -62,6 +68,7 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
     public void montaPagerTab(List<GrupoProduto> grupoProdutoList) {
         mVendaGruposAdapter = new VendaGruposAdapter(getSupportFragmentManager(), grupoProdutoList);
         mViewPager.setAdapter(mVendaGruposAdapter);
+        tabs.setViewPager(mViewPager);
     }
 
     @OnClick(R.id.fab)
@@ -78,7 +85,7 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(Util.venda.getId() == null) {
+        if (Util.venda.getId() == null) {
             Mesas m = Util.venda.getMesasId();
             m.setStatusmesa(0);
             m.save();

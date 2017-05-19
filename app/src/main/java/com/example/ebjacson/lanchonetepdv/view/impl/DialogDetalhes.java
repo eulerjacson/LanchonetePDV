@@ -5,22 +5,26 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.widget.Button;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Ingrediente;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
+import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Observacao;
 import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IDialogDetalhes;
 import com.example.ebjacson.lanchonetepdv.view.adapters.IngreVendaAdapter;
-import com.example.ebjacson.lanchonetepdv.view.adapters.MapaMesasAdapter;
 import com.example.ebjacson.lanchonetepdv.view.adapters.ObsVendaAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by euler on 18/05/17.
@@ -32,6 +36,10 @@ public class DialogDetalhes extends AlertDialog implements IDialogDetalhes {
     RecyclerView rvIngredientes;
     @BindView(R.id.rvObservacoes)
     RecyclerView rvObservacoes;
+    @BindView(R.id.btCancelarDetalhes)
+    Button btCancelarDetalhes;
+    @BindView(R.id.btOkDetalhes)
+    Button btOkDetalhes;
 
     Context context;
 
@@ -50,6 +58,7 @@ public class DialogDetalhes extends AlertDialog implements IDialogDetalhes {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_detalhes);
+        setCancelable(false);
         ButterKnife.bind(this);
 
         montaRecyclerIng();
@@ -68,5 +77,31 @@ public class DialogDetalhes extends AlertDialog implements IDialogDetalhes {
         obsVendaAdapter = new ObsVendaAdapter(context, Observacao.find(Observacao.class, "statusobs = ?", "1"), itemVenda);
         rvObservacoes.setLayoutManager(new GridLayoutManager(context, 2));
         rvObservacoes.setAdapter(obsVendaAdapter);
+    }
+
+    @OnClick(R.id.btOkDetalhes)
+    public void clickOk(){
+        dismiss();
+    }
+
+    @OnClick(R.id.btCancelarDetalhes)
+    public void clickCancelar(){
+        List<IngItVenda> removerIngs = new ArrayList<>();
+        for (IngItVenda ingItVenda : Util.ingItVendaList) {
+            if(ingItVenda.getItemVendaId().equals(itemVenda)){
+                removerIngs.add(ingItVenda);
+            }
+        }
+        Util.ingItVendaList.removeAll(removerIngs);
+
+        List<ObsItVenda> removerObs = new ArrayList<>();
+        for (ObsItVenda obsItVenda : Util.obsItVendaList) {
+            if(obsItVenda.getItemVendaId().equals(itemVenda)){
+                removerObs.add(obsItVenda);
+            }
+        }
+        Util.obsItVendaList.removeAll(removerObs);
+
+        dismiss();
     }
 }

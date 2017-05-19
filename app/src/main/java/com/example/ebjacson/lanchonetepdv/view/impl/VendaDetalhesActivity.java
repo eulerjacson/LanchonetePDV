@@ -79,6 +79,7 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
 
     @Override
     public void chamaVendaActivity() {
+        vendaConfirmPresenter.limparItens();
         Intent intent = new Intent(this, VendaActivity.class);
         startActivity(intent);
     }

@@ -1,11 +1,14 @@
 package com.example.ebjacson.lanchonetepdv.presenter.impl;
 
+import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
+import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Venda;
 import com.example.ebjacson.lanchonetepdv.presenter.IVendaConfirmPresenter;
 import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IVendaConfirmActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.ebjacson.lanchonetepdv.util.Util.itemVendaList;
@@ -45,11 +48,17 @@ public class VendaConfirmPresenter implements IVendaConfirmPresenter {
     }
 
     @Override
-    public void salvarItens(Venda venda, List<ItemVenda> itemVendaList) {
+    public void salvarItens(Venda venda, List<ItemVenda> itemVendaList, List<IngItVenda> ingItVendaList, List<ObsItVenda> obsItVendaList) {
         venda.save();
         for (ItemVenda itemVenda : itemVendaList) {
             itemVenda.setStatusitven(true);
             itemVenda.save();
+        }
+        for (IngItVenda ingItVenda : ingItVendaList) {
+            ingItVenda.save();
+        }
+        for (ObsItVenda obsItVenda : obsItVendaList) {
+            obsItVenda.save();
         }
         iVendaConfirmActivity.chamaMapaMesasActivity();
     }
@@ -58,5 +67,14 @@ public class VendaConfirmPresenter implements IVendaConfirmPresenter {
     public void limparVenda() {
         Util.venda = null;
         Util.itemVendaList = null;
+        Util.ingItVendaList = null;
+        Util.obsItVendaList = null;
+    }
+
+    @Override
+    public void limparItens() {
+        Util.itemVendaList = new ArrayList<>();
+        Util.ingItVendaList = new ArrayList<>();
+        Util.obsItVendaList = new ArrayList<>();
     }
 }

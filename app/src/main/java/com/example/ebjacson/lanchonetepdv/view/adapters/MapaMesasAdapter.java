@@ -10,14 +10,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
 import com.example.ebjacson.lanchonetepdv.model.Mesas;
+import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Venda;
 import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IMapaMesasAdapter;
 import com.example.ebjacson.lanchonetepdv.view.impl.VendaActivity;
 import com.example.ebjacson.lanchonetepdv.view.impl.VendaDetalhesActivity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -101,6 +104,9 @@ public class MapaMesasAdapter extends BaseAdapter implements IMapaMesasAdapter{
         v.setVlrtotalven(0.0);
 
         Util.venda = v;
+        Util.itemVendaList = new ArrayList<>();
+        Util.ingItVendaList = new ArrayList<>();
+        Util.obsItVendaList = new ArrayList<>();
     }
 
     @Override
@@ -114,6 +120,16 @@ public class MapaMesasAdapter extends BaseAdapter implements IMapaMesasAdapter{
         List<Venda> vendaList = Venda.find(Venda.class, "mesas_id = ? AND statusven = ?", id.getId().toString(), "1");
         Util.venda = vendaList.size() > 0 ? vendaList.get(vendaList.size() - 1) : null;
         Util.itemVendaList = ItemVenda.find(ItemVenda.class, "venda_id = ?", Util.venda.getId().toString());
+        Util.ingItVendaList = new ArrayList<>();
+        Util.obsItVendaList = new ArrayList<>();
+
+        for (ItemVenda itemVenda : Util.itemVendaList) {
+            Util.ingItVendaList.addAll(IngItVenda.find(IngItVenda.class, "item_venda_id = ?", itemVenda.getId().toString()));
+        }
+
+        for (ItemVenda itemVenda : Util.itemVendaList) {
+            Util.obsItVendaList.addAll(ObsItVenda.find(ObsItVenda.class, "item_venda_id = ?", itemVenda.getId().toString()));
+        }
 
         Intent intent = new Intent(mContext, VendaDetalhesActivity.class);
         mContext.startActivity(intent);

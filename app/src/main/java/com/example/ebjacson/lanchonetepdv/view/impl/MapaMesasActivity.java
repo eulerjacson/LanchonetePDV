@@ -39,60 +39,63 @@ public class MapaMesasActivity extends AppCompatActivity implements IMapaMesasAc
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        /*for(int x = 1; x < 15;x++){
-            Mesas m = new Mesas();
-            m.setStatusmesa(0);
-            m.setDescmesa("" + x);
-            m.save();
-        }
+        ////CADASTRO GENERICO
+        if(Mesas.listAll(Mesas.class).size() == 0) {
+            for (int x = 1; x < 15; x++) {
+                Mesas m = new Mesas();
+                m.setStatusmesa(0);
+                m.setDescmesa("" + x);
+                m.save();
+            }
 
-        for(int x = 1; x < 6;x++){
-            GrupoProduto g = new GrupoProduto();
-            g.setStatusgrupo(true);
-            g.setDescgrupo("Grupo " + x);
-            g.save();
-        }
+            for (int x = 1; x < 6; x++) {
+                GrupoProduto g = new GrupoProduto();
+                g.setStatusgrupo(true);
+                g.setDescgrupo("Grupo " + x);
+                g.save();
+            }
 
-        for (GrupoProduto grupoProduto : GrupoProduto.listAll(GrupoProduto.class)) {
-            Produto p = new Produto();
-            p.setGrupoProdutoId(grupoProduto);
-            p.setImprimepro(false);
-            p.setNomepro("Produto " + grupoProduto.getId());
-            p.setPrecopro(10.0);
-            p.setStatuspro(true);
-            p.save();
-            Produto p2 = new Produto();
-            p2.setGrupoProdutoId(grupoProduto);
-            p2.setImprimepro(false);
-            p2.setNomepro("Produto 1" + grupoProduto.getId());
-            p2.setPrecopro(10.0);
-            p2.setStatuspro(true);
-            p2.save();
-        }
+            for (GrupoProduto grupoProduto : GrupoProduto.listAll(GrupoProduto.class)) {
+                Produto p = new Produto();
+                p.setGrupoProdutoId(grupoProduto);
+                p.setImprimepro(false);
+                p.setNomepro("Produto " + grupoProduto.getId());
+                p.setPrecopro(10.0);
+                p.setStatuspro(true);
+                p.save();
+                Produto p2 = new Produto();
+                p2.setGrupoProdutoId(grupoProduto);
+                p2.setImprimepro(false);
+                p2.setNomepro("Produto 1" + grupoProduto.getId());
+                p2.setPrecopro(10.0);
+                p2.setStatuspro(true);
+                p2.save();
+            }
 
-        for(int x = 1; x <= 3;x++ ){
-            GrupoIng g = new GrupoIng();
-            g.setDescgruing("GrupoIng " + x);
-            g.setStatusgruing(true);
-            g.save();
-            Ingrediente i = new Ingrediente();
-            i.setDescing("Ingrediente " + x);
-            i.setGrupoIngId(g);
-            i.setStatusing(true);
-            i.save();
-        }
+            for (int x = 1; x <= 3; x++) {
+                GrupoIng g = new GrupoIng();
+                g.setDescgruing("GrupoIng " + x);
+                g.setStatusgruing(true);
+                g.save();
+                Ingrediente i = new Ingrediente();
+                i.setDescing("Ingrediente " + x);
+                i.setGrupoIngId(g);
+                i.setStatusing(true);
+                i.save();
+            }
 
-        for(int x = 1; x <= 3;x++ ){
-            GrupoObs g = new GrupoObs();
-            g.setDescgruobs("GrupoObs " + x);
-            g.setStatusgruobs(true);
-            g.save();
-            Observacao o = new Observacao();
-            o.setDescobs("Observacao " + x);
-            o.setGrupoObsId(g);
-            o.setStatusobs(true);
-            o.save();
-        }*/
+            for (int x = 1; x <= 3; x++) {
+                GrupoObs g = new GrupoObs();
+                g.setDescgruobs("GrupoObs " + x);
+                g.setStatusgruobs(true);
+                g.save();
+                Observacao o = new Observacao();
+                o.setDescobs("Observacao " + x);
+                o.setGrupoObsId(g);
+                o.setStatusobs(true);
+                o.save();
+            }
+        }
 
         mapaMesasPresenter = new MapaMesasPresenter(this);
         mapaMesasPresenter.carregarGridView();

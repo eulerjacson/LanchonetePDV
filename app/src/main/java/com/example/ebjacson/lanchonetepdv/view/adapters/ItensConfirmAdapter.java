@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
+import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
+import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IItensConfirmAdapter;
 
 import java.util.List;
@@ -45,15 +48,15 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
         final ItemVenda dao = itemVendaList.get(position);
 
         viewHolder.tvNomeProPV.setText(dao.getProdutoId().getNomepro());
+        viewHolder.tvIngObs.setVisibility(View.GONE);
+
+        setIngTextView(viewHolder);
+
+        setObsTextView(viewHolder);
 
         viewHolder.btMaisPV.setText(recuperItemTab(dao));
 
-        if(dao.getStatusitven() != null){
-            viewHolder.btMaisPV.setEnabled(false);
-            viewHolder.btMenosPV.setEnabled(false);
-            viewHolder.btMaisPV.setBackground(mContext.getResources().getDrawable(R.drawable.button_click_verde));
-            viewHolder.btMenosPV.setVisibility(View.GONE);
-        }
+        trataStatusBotao(dao, viewHolder);
 
         viewHolder.btMaisPV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,13 +110,49 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
         return iv.getQtditven().toString();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void setIngTextView(ViewHolder viewHolder) {
+        if(Util.ingItVendaList.size() > 0){
+            String ing = "";
+            for (IngItVenda ingItVenda : Util.ingItVendaList) {
+                ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+            }
+            viewHolder.tvIngObs.setText("(" + ing + ")");
+            viewHolder.tvIngObs.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void setObsTextView(ViewHolder viewHolder) {
+        if(Util.obsItVendaList.size() > 0){
+            String obs = "";
+            for (ObsItVenda obsItVenda : Util.obsItVendaList) {
+                obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+            }
+            viewHolder.tvIngObs.setText(viewHolder.tvIngObs.getText().toString() + "(" + obs + ")");
+            viewHolder.tvIngObs.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void trataStatusBotao(ItemVenda dao, ViewHolder viewHolder) {
+        if(dao.getStatusitven() != null){
+            viewHolder.btMaisPV.setEnabled(false);
+            viewHolder.btMenosPV.setEnabled(false);
+            viewHolder.btMaisPV.setBackground(mContext.getResources().getDrawable(R.drawable.button_click_verde));
+            viewHolder.btMenosPV.setVisibility(View.GONE);
+        }
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.btMaisPV)
         Button btMaisPV;
         @BindView(R.id.tvNomeProPV)
         TextView tvNomeProPV;
         @BindView(R.id.btMenosPV)
         Button btMenosPV;
+        @BindView(R.id.tvIngObs)
+        TextView tvIngObs;
 
         ViewHolder(View view) {
             super(view);

@@ -58,6 +58,7 @@ public class VendaProdutosAdapter extends RecyclerView.Adapter<VendaProdutosAdap
         final Produto dao = produtoList.get(position);
 
         viewHolder.tvNomeProPV.setText(dao.getNomepro());
+        viewHolder.tvIngObs.setVisibility(View.GONE);
 
         viewHolder.btMaisPV.setText(recuperItemTab(dao));
 
@@ -173,6 +174,8 @@ public class VendaProdutosAdapter extends RecyclerView.Adapter<VendaProdutosAdap
         TextView tvNomeProPV;
         @BindView(R.id.btMenosPV)
         Button btMenosPV;
+        @BindView(R.id.tvIngObs)
+        TextView tvIngObs;
 
         ViewHolder(View view) {
             super(view);

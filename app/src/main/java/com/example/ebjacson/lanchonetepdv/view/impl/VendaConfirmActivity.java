@@ -51,7 +51,7 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
     @OnClick(R.id.fab)
     public void fabClick(View view) {
         vendaConfirmPresenter.atualizarValoresVenda(Util.venda, Util.itemVendaList);
-        vendaConfirmPresenter.salvarItens(Util.venda, Util.itemVendaList);
+        vendaConfirmPresenter.salvarItens(Util.venda, Util.itemVendaList, Util.ingItVendaList, Util.obsItVendaList);
     }
 
     @OnClick(R.id.fab2)

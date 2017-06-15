@@ -25,7 +25,7 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example.ebjacson.lanchonetepdv" />
 
-        <activity android:name=".view.impl.MapaMesasActivity">
+        <activity android:name=".view.impl.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +44,52 @@
             android:name=".view.impl.VendaDetalhesActivity"
             android:label="@string/detalhesvenda"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.GrupoProCadActivity"
+            android:label="@string/grupodepro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.GrupoIngCadActivity"
+            android:label="@string/grupodeing"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.GrupoObsCadActivity"
+            android:label="@string/grupodeing"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.ObsCadActivity"
+            android:label="@string/observacao"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.IngCadActivity"
+            android:label="@string/ingrediente"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.EstadoCadActivity"
+            android:label="@string/estado"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.CidadeCadActivity"
+            android:label="@string/cidade"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.MesaCadActivity"
+            android:label="@string/mesa"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.ClienteListActivity"
+            android:label="@string/cliente"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.ClienteCadActivity"
+            android:label="@string/cliente"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.MapaMesasActivity"
+            android:label="@string/mapamesas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        />
+        <activity android:name=".view.impl.CadastrosActivity"></activity>
     </application>
 
 </manifest>

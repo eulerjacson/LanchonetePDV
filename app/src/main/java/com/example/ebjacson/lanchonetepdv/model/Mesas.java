@@ -17,6 +17,7 @@ public class Mesas extends SugarRecord<Mesas> implements Serializable {
 
     private String descmesa;
     private Integer statusmesa;
+    private Boolean mostrarmesa;
 
     public Mesas() {
     }
@@ -38,6 +39,14 @@ public class Mesas extends SugarRecord<Mesas> implements Serializable {
         this.statusmesa = statusmesa;
     }
 
+    public Boolean getMostrarmesa() {
+        return mostrarmesa;
+    }
+
+    public void setMostrarmesa(Boolean mostrarmesa) {
+        this.mostrarmesa = mostrarmesa;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,7 +56,9 @@ public class Mesas extends SugarRecord<Mesas> implements Serializable {
 
         if (descmesa != null ? !descmesa.equals(mesas.descmesa) : mesas.descmesa != null)
             return false;
-        return statusmesa != null ? statusmesa.equals(mesas.statusmesa) : mesas.statusmesa == null;
+        if (statusmesa != null ? !statusmesa.equals(mesas.statusmesa) : mesas.statusmesa != null)
+            return false;
+        return mostrarmesa != null ? mostrarmesa.equals(mesas.mostrarmesa) : mesas.mostrarmesa == null;
 
     }
 
@@ -55,6 +66,7 @@ public class Mesas extends SugarRecord<Mesas> implements Serializable {
     public int hashCode() {
         int result = descmesa != null ? descmesa.hashCode() : 0;
         result = 31 * result + (statusmesa != null ? statusmesa.hashCode() : 0);
+        result = 31 * result + (mostrarmesa != null ? mostrarmesa.hashCode() : 0);
         return result;
     }
 
@@ -63,6 +75,7 @@ public class Mesas extends SugarRecord<Mesas> implements Serializable {
         return "Mesas{" +
                 "descmesa='" + descmesa + '\'' +
                 ", statusmesa=" + statusmesa +
+                ", mostrarmesa=" + mostrarmesa +
                 '}';
     }
 }

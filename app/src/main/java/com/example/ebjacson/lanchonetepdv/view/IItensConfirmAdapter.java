@@ -11,8 +11,8 @@ public interface IItensConfirmAdapter {
     String adicionaQtdItem(ItemVenda iv);
     String removeDiminuiQtdItem(ItemVenda iv);
     String recuperItemTab(ItemVenda iv);
-    void setIngTextView(ItensConfirmAdapter.ViewHolder viewHolder);
-    void setObsTextView(ItensConfirmAdapter.ViewHolder viewHolder);
+    void setIngTextView(ItemVenda dao, ItensConfirmAdapter.ViewHolder viewHolder);
+    void setObsTextView(ItemVenda dao, ItensConfirmAdapter.ViewHolder viewHolder);
     void trataStatusBotao(ItemVenda dao, ItensConfirmAdapter.ViewHolder viewHolder);
     void mostraValores(ItensConfirmAdapter.ViewHolder viewHolder, ItemVenda dao);
 }

@@ -52,9 +52,9 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
         viewHolder.tvNomeProPV.setText(dao.getProdutoId().getNomepro());
         viewHolder.tvIngObs.setVisibility(View.GONE);
 
-        setIngTextView(viewHolder);
+        setIngTextView(dao, viewHolder);
 
-        setObsTextView(viewHolder);
+        setObsTextView(dao, viewHolder);
 
         viewHolder.btMaisPV.setText(recuperItemTab(dao));
 
@@ -125,11 +125,13 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
     }
 
     @Override
-    public void setIngTextView(ViewHolder viewHolder) {
+    public void setIngTextView(ItemVenda dao, ViewHolder viewHolder) {
         if(Util.ingItVendaList.size() > 0){
             String ing = "";
             for (IngItVenda ingItVenda : Util.ingItVendaList) {
-                ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+                if(ingItVenda.getItemVendaId().equals(dao)) {
+                    ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+                }
             }
             viewHolder.tvIngObs.setText("(" + ing + ")");
             viewHolder.tvIngObs.setVisibility(View.VISIBLE);
@@ -137,11 +139,13 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
     }
 
     @Override
-    public void setObsTextView(ViewHolder viewHolder) {
+    public void setObsTextView(ItemVenda dao, ViewHolder viewHolder) {
         if(Util.obsItVendaList.size() > 0){
             String obs = "";
             for (ObsItVenda obsItVenda : Util.obsItVendaList) {
-                obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+                if(obsItVenda.getItemVendaId().equals(dao)) {
+                    obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+                }
             }
             viewHolder.tvIngObs.setText(viewHolder.tvIngObs.getText().toString() + "(" + obs + ")");
             viewHolder.tvIngObs.setVisibility(View.VISIBLE);

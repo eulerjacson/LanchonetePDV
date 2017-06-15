@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ebjacson.lanchonetepdv.view.impl.MenuActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="0"
+        app:srcCompat="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/btConfMenu"
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:layout_column="1"
+        android:layout_row="2"
+        android:text="@string/configuracoes"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <Button
+        android:id="@+id/btCadMenu"
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:layout_column="1"
+        android:layout_row="1"
+        android:text="@string/cadastros"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btVendaMenu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/btRelMenu"
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:text="@string/relatorios"
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <Button
+        android:id="@+id/btVendaMenu"
+        android:layout_width="170dp"
+        android:layout_height="160dp"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:text="@string/venda"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+</GridLayout>

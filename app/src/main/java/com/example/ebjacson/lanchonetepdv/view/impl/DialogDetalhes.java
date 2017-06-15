@@ -14,6 +14,8 @@ import com.example.ebjacson.lanchonetepdv.model.Ingrediente;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
 import com.example.ebjacson.lanchonetepdv.model.ObsItVenda;
 import com.example.ebjacson.lanchonetepdv.model.Observacao;
+import com.example.ebjacson.lanchonetepdv.model.ProGruIng;
+import com.example.ebjacson.lanchonetepdv.model.ProGruObs;
 import com.example.ebjacson.lanchonetepdv.util.Util;
 import com.example.ebjacson.lanchonetepdv.view.IDialogDetalhes;
 import com.example.ebjacson.lanchonetepdv.view.adapters.IngreVendaAdapter;
@@ -25,6 +27,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.orm.SugarRecord.find;
 
 /**
  * Created by euler on 18/05/17.
@@ -67,14 +71,26 @@ public class DialogDetalhes extends AlertDialog implements IDialogDetalhes {
 
     @Override
     public void montaRecyclerIng() {
-        ingreVendaAdapter = new IngreVendaAdapter(context, Ingrediente.find(Ingrediente.class, "statusing = ?", "1"), itemVenda);
+        List<Ingrediente> ingredienteList = new ArrayList<>();
+        List<ProGruIng> proGruIngList = find(ProGruIng.class, "produto_id = ? ", itemVenda.getProdutoId().getId().toString());
+        for (ProGruIng proGruIng : proGruIngList) {
+            ingredienteList.addAll(Ingrediente.find(Ingrediente.class, "grupo_ing_id = ? and statusing = 1 ", proGruIng.getGrupoIngId().getId().toString()));
+        }
+
+        ingreVendaAdapter = new IngreVendaAdapter(context, ingredienteList, itemVenda);
         rvIngredientes.setLayoutManager(new GridLayoutManager(context, 2));
         rvIngredientes.setAdapter(ingreVendaAdapter);
     }
 
     @Override
     public void montaRecyclerObs() {
-        obsVendaAdapter = new ObsVendaAdapter(context, Observacao.find(Observacao.class, "statusobs = ?", "1"), itemVenda);
+        List<Observacao> observacaoList = new ArrayList<>();
+        List<ProGruObs> proGruIngList = find(ProGruObs.class, "produto_id = ? ", itemVenda.getProdutoId().getId().toString());
+        for (ProGruObs proGruObs : proGruIngList) {
+            observacaoList.addAll(Observacao.find(Observacao.class, "grupo_obs_id = ? and statusobs = 1 ", proGruObs.getGrupoObsId().getId().toString()));
+        }
+
+        obsVendaAdapter = new ObsVendaAdapter(context, observacaoList, itemVenda);
         rvObservacoes.setLayoutManager(new GridLayoutManager(context, 2));
         rvObservacoes.setAdapter(obsVendaAdapter);
     }

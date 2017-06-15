@@ -129,8 +129,14 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
         if(Util.ingItVendaList.size() > 0){
             String ing = "";
             for (IngItVenda ingItVenda : Util.ingItVendaList) {
-                if(ingItVenda.getItemVendaId().equals(dao)) {
-                    ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+                if(ingItVenda.getItemVendaId().getId() != null) {
+                    if (ingItVenda.getItemVendaId().getId().equals(dao.getId())) {
+                        ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+                    }
+                }else{
+                    if (ingItVenda.getItemVendaId().equals(dao)) {
+                        ing = ing.concat(ingItVenda.getIngredienteId().getDescing() + " ");
+                    }
                 }
             }
             viewHolder.tvIngObs.setText("(" + ing + ")");
@@ -143,8 +149,14 @@ public class ItensConfirmAdapter extends RecyclerView.Adapter<ItensConfirmAdapte
         if(Util.obsItVendaList.size() > 0){
             String obs = "";
             for (ObsItVenda obsItVenda : Util.obsItVendaList) {
-                if(obsItVenda.getItemVendaId().equals(dao)) {
-                    obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+                if(obsItVenda.getItemVendaId().getId() != null) {
+                    if (obsItVenda.getItemVendaId().getId().equals(dao.getId())) {
+                        obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+                    }
+                }else{
+                    if (obsItVenda.getItemVendaId().equals(dao)) {
+                        obs = obs.concat(obsItVenda.getObservacaoId().getDescobs() + " ");
+                    }
                 }
             }
             viewHolder.tvIngObs.setText(viewHolder.tvIngObs.getText().toString() + "(" + obs + ")");

@@ -10,4 +10,5 @@ public interface IGenericCadAdapter {
     void abrirDialog(Object object);
     void atualizaLista(List<Object> novaLista);
     void callClienteCad(Long codCli);
+    void callProdutoCad(Long idPro);
 }

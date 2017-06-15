@@ -18,9 +18,11 @@ import com.example.ebjacson.lanchonetepdv.model.GrupoProduto;
 import com.example.ebjacson.lanchonetepdv.model.Ingrediente;
 import com.example.ebjacson.lanchonetepdv.model.Mesas;
 import com.example.ebjacson.lanchonetepdv.model.Observacao;
+import com.example.ebjacson.lanchonetepdv.model.Produto;
 import com.example.ebjacson.lanchonetepdv.view.IGenericCadAdapter;
 import com.example.ebjacson.lanchonetepdv.view.impl.ClienteCadActivity;
 import com.example.ebjacson.lanchonetepdv.view.impl.DialogGenericCad;
+import com.example.ebjacson.lanchonetepdv.view.impl.ProdutoCadActivity;
 
 import java.util.List;
 
@@ -76,6 +78,8 @@ public class GenericCadAdapter extends RecyclerView.Adapter<GenericCadAdapter.Vi
             holder.textView.setText(((Mesas) dao).getDescmesa());
         } else if(dao instanceof Cliente){
             holder.textView.setText(((Cliente) dao).getNomecli());
+        } else if(dao instanceof Produto){
+            holder.textView.setText(((Produto) dao).getNomepro());
         }
 
         holder.textView.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +87,9 @@ public class GenericCadAdapter extends RecyclerView.Adapter<GenericCadAdapter.Vi
             public void onClick(View v) {
                 if(dao instanceof Cliente){
                     callClienteCad(((Cliente) dao).getId());
-                }else {
+                } else if(dao instanceof Produto){
+                    callProdutoCad(((Produto) dao).getId());
+                } else {
                     abrirDialog(dao);
                 }
             }
@@ -119,9 +125,16 @@ public class GenericCadAdapter extends RecyclerView.Adapter<GenericCadAdapter.Vi
     }
 
     @Override
-    public void callClienteCad(Long codCli) {
+    public void callClienteCad(Long idCli) {
         Intent intent = new Intent(mContext, ClienteCadActivity.class);
-        intent.putExtra("codcli", codCli);
+        intent.putExtra("codcli", idCli);
+        mContext.startActivity(intent);
+    }
+
+    @Override
+    public void callProdutoCad(Long idPro) {
+        Intent intent = new Intent(mContext, ProdutoCadActivity.class);
+        intent.putExtra("codcli", idPro);
         mContext.startActivity(intent);
     }
 }

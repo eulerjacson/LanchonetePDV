@@ -99,6 +99,7 @@ public class ClienteCadActivity extends AppCompatActivity implements IClienteCad
 
     @OnClick(R.id.btCancelarCliCad)
     void clickCancel() {
+        callClienteList();
     }
 
     @OnClick(R.id.btDelCliCad)
@@ -154,6 +155,7 @@ public class ClienteCadActivity extends AppCompatActivity implements IClienteCad
     public void callClienteList() {
         Intent intent = new Intent(this, ClienteListActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

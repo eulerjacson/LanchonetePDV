@@ -85,11 +85,19 @@
             android:label="@string/cliente"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".view.impl.ProdutoListActivity"
+            android:label="@string/produto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.impl.ProdutoCadActivity"
+            android:label="@string/produto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".view.impl.MapaMesasActivity"
             android:label="@string/mapamesas"
             android:theme="@style/AppTheme.NoActionBar" />
         />
-        <activity android:name=".view.impl.CadastrosActivity"></activity>
+        <activity android:name=".view.impl.CadastrosActivity" />
     </application>
 
 </manifest>

@@ -7,10 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.ebjacson.lanchonetepdv.R;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
@@ -85,5 +82,6 @@ public class VendaDetalhesActivity extends AppCompatActivity implements IVendaDe
         vendaConfirmPresenter.limparItens();
         Intent intent = new Intent(this, VendaActivity.class);
         startActivity(intent);
+        finish();
     }
 }

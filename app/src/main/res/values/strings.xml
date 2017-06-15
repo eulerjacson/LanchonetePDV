@@ -38,4 +38,6 @@
     <string name="rua">Rua</string>
     <string name="numero">Número</string>
     <string name="bairro">Bairro</string>
+    <string name="preco">Preço</string>
+    <string name="imprime">Imprime</string>
 </resources>

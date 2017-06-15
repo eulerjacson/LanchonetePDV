@@ -102,12 +102,14 @@ public class MenuActivity extends AppCompatActivity {
     public void vendaClick(){
         Intent intent = new Intent(this, MapaMesasActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @OnClick(R.id.btCadMenu)
     public void cadClick(){
         Intent intent = new Intent(this, CadastrosActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @OnClick(R.id.btRelMenu)

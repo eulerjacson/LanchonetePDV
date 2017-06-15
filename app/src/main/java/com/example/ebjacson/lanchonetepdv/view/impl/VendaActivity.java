@@ -80,6 +80,7 @@ public class VendaActivity extends AppCompatActivity implements IVendaActivity {
     public void callVendaConfirmActivity() {
         Intent intent = new Intent(this, VendaConfirmActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

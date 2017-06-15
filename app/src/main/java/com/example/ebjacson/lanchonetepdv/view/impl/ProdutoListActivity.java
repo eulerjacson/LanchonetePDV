@@ -10,9 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.ebjacson.lanchonetepdv.R;
-import com.example.ebjacson.lanchonetepdv.model.Cliente;
-import com.example.ebjacson.lanchonetepdv.presenter.impl.ClienteListPresenter;
-import com.example.ebjacson.lanchonetepdv.view.IClienteList;
+import com.example.ebjacson.lanchonetepdv.model.Produto;
+import com.example.ebjacson.lanchonetepdv.presenter.impl.ProdutoListPresenter;
+import com.example.ebjacson.lanchonetepdv.view.IProdutoList;
 import com.example.ebjacson.lanchonetepdv.view.adapters.GenericCadAdapter;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ClienteListActivity extends AppCompatActivity implements IClienteList {
+public class ProdutoListActivity extends AppCompatActivity implements IProdutoList {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -31,7 +31,7 @@ public class ClienteListActivity extends AppCompatActivity implements IClienteLi
     @BindView(R.id.rvGenericCad)
     RecyclerView rvGrupoProCad;
 
-    ClienteListPresenter ClienteListPresenter;
+    ProdutoListPresenter ProdutoListPresenter;
 
     GenericCadAdapter genericCadAdapter;
 
@@ -42,25 +42,24 @@ public class ClienteListActivity extends AppCompatActivity implements IClienteLi
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        ClienteListPresenter = new ClienteListPresenter(this);
-        ClienteListPresenter.buscarObjectList();
+        ProdutoListPresenter = new ProdutoListPresenter(this);
+        ProdutoListPresenter.buscarObjectList();
 
     }
 
     @OnClick(R.id.fab)
     public void fabClick(View view) {
-        Intent intent = new Intent(this, ClienteCadActivity.class);
+        Intent intent = new Intent(this, ProdutoCadActivity.class);
         startActivity(intent);
         finish();
     }
 
     @Override
-    public void montaRecyclerCliente(List<Cliente> obsList) {
+    public void montaRecyclerProduto(List<Produto> produtoList) {
         List<Object> objectList = new ArrayList<>();
-        objectList.addAll(obsList);
+        objectList.addAll(produtoList);
         genericCadAdapter = new GenericCadAdapter(this, objectList);
         rvGrupoProCad.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rvGrupoProCad.setAdapter(genericCadAdapter);
-
     }
 }

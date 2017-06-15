@@ -61,7 +61,7 @@ public class CadastrosActivity extends AppCompatActivity implements ICadastroAct
 
     @OnClick(R.id.tvProCad)
     public void cadProClick() {
-
+        chamaActivity(ProdutoListActivity.class);
     }
 
     @OnClick(R.id.tvIngCad)
@@ -98,5 +98,6 @@ public class CadastrosActivity extends AppCompatActivity implements ICadastroAct
     public void chamaActivity(Class cl) {
         Intent intent = new Intent(this, cl);
         startActivity(intent);
+        finish();
     }
 }

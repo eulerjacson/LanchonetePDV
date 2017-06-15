@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.ebjacson.lanchonetepdv.R;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
@@ -74,12 +73,14 @@ public class VendaConfirmActivity extends AppCompatActivity implements IVendaCon
         vendaConfirmPresenter.limparVenda();
         Intent intent = new Intent(this, MapaMesasActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
     public void chamaVendaActivity() {
         Intent intent = new Intent(this, VendaActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

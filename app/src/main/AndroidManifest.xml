@@ -93,11 +93,12 @@
             android:label="@string/produto"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".view.impl.CadastroNavActivity"
+            android:label="@string/cadastros" />
+        <activity
             android:name=".view.impl.MapaMesasActivity"
             android:label="@string/mapamesas"
             android:theme="@style/AppTheme.NoActionBar" />
-        />
-        <activity android:name=".view.impl.CadastrosActivity" />
     </application>
 
 </manifest>

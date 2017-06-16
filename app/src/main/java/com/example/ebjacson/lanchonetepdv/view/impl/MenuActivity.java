@@ -107,7 +107,7 @@ public class MenuActivity extends AppCompatActivity {
 
     @OnClick(R.id.btCadMenu)
     public void cadClick(){
-        Intent intent = new Intent(this, CadastrosActivity.class);
+        Intent intent = new Intent(this, CadastroNavActivity.class);
         startActivity(intent);
         finish();
     }

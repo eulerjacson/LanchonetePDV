@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_gruposcad"
+        android:icon="@drawable/ic_group"
+        android:title="@string/grupos" />
+
+    <item
+        android:id="@+id/nav_cad"
+        android:icon="@drawable/ic_list"
+        android:title="@string/produtos" />
+
+    <item
+        android:id="@+id/nav_confcad"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/configuracoes" />
+
+</menu>

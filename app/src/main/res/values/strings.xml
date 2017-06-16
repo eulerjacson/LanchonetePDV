@@ -40,4 +40,6 @@
     <string name="bairro">Bairro</string>
     <string name="preco">Preço</string>
     <string name="imprime">Imprime</string>
+    <string name="grupos">Grupos</string>
+    <string name="produtos">Produtos</string>
 </resources>

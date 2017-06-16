@@ -42,4 +42,6 @@
     <string name="imprime">Imprime</string>
     <string name="grupos">Grupos</string>
     <string name="produtos">Produtos</string>
+    <string name="contasrec">Contas a Receber</string>
+    <string name="valor">Valor</string>
 </resources>

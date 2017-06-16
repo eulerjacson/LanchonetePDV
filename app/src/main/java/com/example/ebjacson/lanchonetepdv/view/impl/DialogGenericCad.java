@@ -102,10 +102,11 @@ public class DialogGenericCad extends AlertDialog implements IDialogGenericCad {
                 btDelDlgCad.setVisibility(View.GONE);
             }
         } else if (object instanceof Ingrediente) {
-            etDlgGenCad2.setVisibility(View.GONE);
+            etDlgGenCad2.setHint(R.string.valor);
             Ingrediente gp = ((Ingrediente) object);
             if (gp.getId() != null) {
                 etDlgGenCad.setText(gp.getDescing());
+                etDlgGenCad2.setText(gp.getValoring().toString());
                 swtDlgGenCad.setChecked(gp.getStatusing());
             } else {
                 btDelDlgCad.setVisibility(View.GONE);
@@ -197,6 +198,7 @@ public class DialogGenericCad extends AlertDialog implements IDialogGenericCad {
         } else if (object instanceof Ingrediente) {
             Ingrediente gp = ((Ingrediente) object);
             gp.setDescing(etDlgGenCad.getText().toString());
+            gp.setValoring(Double.valueOf(etDlgGenCad2.getText().toString()));
             gp.setStatusing(swtDlgGenCad.isChecked());
             gp.setGrupoIngId((GrupoIng) spDlgGenCad.getSelectedItem());
             gp.save();

@@ -23,8 +23,8 @@ public class MenuActivity extends AppCompatActivity {
 
     @BindView(R.id.imageView)
     ImageView imageView;
-    @BindView(R.id.btConfMenu)
-    Button btConfMenu;
+    @BindView(R.id.btContasRecMenu)
+    Button btContasRecMenu;
     @BindView(R.id.btCadMenu)
     Button btCadMenu;
     @BindView(R.id.btRelMenu)
@@ -79,6 +79,7 @@ public class MenuActivity extends AppCompatActivity {
                 g.save();
                 Ingrediente i = new Ingrediente();
                 i.setDescing("Ingrediente " + x);
+                i.setValoring(2.0);
                 i.setGrupoIngId(g);
                 i.setStatusing(true);
                 i.save();
@@ -117,8 +118,8 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.btConfMenu)
-    public void confClick(){
+    @OnClick(R.id.btContasRecMenu)
+    public void contasRecClick(){
 
     }
 }

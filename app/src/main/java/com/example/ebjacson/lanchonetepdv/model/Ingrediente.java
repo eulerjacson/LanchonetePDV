@@ -17,6 +17,7 @@ public class Ingrediente extends SugarRecord<Ingrediente> implements Serializabl
 
     private String descing;
     private Boolean statusing;
+    private Double valoring;
     private GrupoIng grupoIngId;
 
     public Ingrediente() {
@@ -46,6 +47,14 @@ public class Ingrediente extends SugarRecord<Ingrediente> implements Serializabl
         this.grupoIngId = grupoIngId;
     }
 
+    public Double getValoring() {
+        return valoring;
+    }
+
+    public void setValoring(Double valoring) {
+        this.valoring = valoring;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,6 +65,8 @@ public class Ingrediente extends SugarRecord<Ingrediente> implements Serializabl
         if (descing != null ? !descing.equals(that.descing) : that.descing != null) return false;
         if (statusing != null ? !statusing.equals(that.statusing) : that.statusing != null)
             return false;
+        if (valoring != null ? !valoring.equals(that.valoring) : that.valoring != null)
+            return false;
         return grupoIngId != null ? grupoIngId.equals(that.grupoIngId) : that.grupoIngId == null;
 
     }
@@ -64,6 +75,7 @@ public class Ingrediente extends SugarRecord<Ingrediente> implements Serializabl
     public int hashCode() {
         int result = descing != null ? descing.hashCode() : 0;
         result = 31 * result + (statusing != null ? statusing.hashCode() : 0);
+        result = 31 * result + (valoring != null ? valoring.hashCode() : 0);
         result = 31 * result + (grupoIngId != null ? grupoIngId.hashCode() : 0);
         return result;
     }
@@ -73,6 +85,7 @@ public class Ingrediente extends SugarRecord<Ingrediente> implements Serializabl
         return "Ingrediente{" +
                 "descing='" + descing + '\'' +
                 ", statusing=" + statusing +
+                ", valoring=" + valoring +
                 ", grupoIngId=" + grupoIngId +
                 '}';
     }

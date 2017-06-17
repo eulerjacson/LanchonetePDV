@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ebjacson.lanchonetepdv.view.impl.CaixaActivity"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btAbrirFechar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:background="@drawable/button_click"
+        android:textColor="@color/md_white_1000"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvNumCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView15"
+            android:background="@color/md_grey_400"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvDataAbCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_above="@+id/tvVlrAbCai"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvNumCai"
+            android:text="@string/abertura" />
+
+        <TextView
+            android:id="@+id/tvVlrAbCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/tvNumCai"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView6"
+            android:text="@string/dinheiro" />
+
+        <TextView
+            android:id="@+id/tvVlrDinCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/tvVlrAbCai"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView8"
+            android:text="@string/credito" />
+
+        <TextView
+            android:id="@+id/tvVlrCreCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/tvVlrDinCai"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView10"
+            android:text="@string/debito" />
+
+        <TextView
+            android:id="@+id/tvVlrDebCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/tvVlrCreCai"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView15"
+            android:background="@color/md_grey_400"
+            android:text="TextView" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMovCaixa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView12"
+            android:text="@string/saldo"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tvVlrSaldoCai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView15"
+            android:layout_alignParentEnd="true"
+            android:text="TextView"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

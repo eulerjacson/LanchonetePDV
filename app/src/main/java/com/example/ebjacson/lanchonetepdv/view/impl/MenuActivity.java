@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.Caixa;
 import com.example.ebjacson.lanchonetepdv.model.Cliente;
 import com.example.ebjacson.lanchonetepdv.model.GrupoIng;
 import com.example.ebjacson.lanchonetepdv.model.GrupoObs;
@@ -15,6 +16,9 @@ import com.example.ebjacson.lanchonetepdv.model.Ingrediente;
 import com.example.ebjacson.lanchonetepdv.model.Mesas;
 import com.example.ebjacson.lanchonetepdv.model.Observacao;
 import com.example.ebjacson.lanchonetepdv.model.Produto;
+import com.example.ebjacson.lanchonetepdv.util.Util;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
     Button btContasRecMenu;
     @BindView(R.id.btCadMenu)
     Button btCadMenu;
-    @BindView(R.id.btRelMenu)
+    @BindView(R.id.btCaiMenu)
     Button btRelMenu;
     @BindView(R.id.btVendaMenu)
     Button btVendaMenu;
@@ -109,13 +113,22 @@ public class MenuActivity extends AppCompatActivity {
                 o.save();
             }
         }
+
+        List<Caixa> caixaList = Caixa.listAll(Caixa.class);
+        if(caixaList.size() > 0){
+            Util.caixa = caixaList.get(caixaList.size() - 1);
+        }
     }
 
     @OnClick(R.id.btVendaMenu)
     public void vendaClick(){
-        Intent intent = new Intent(this, MapaMesasActivity.class);
-        startActivity(intent);
-        finish();
+        if(Util.caixa != null && Util.caixa.getStatuscai()) {
+            Intent intent = new Intent(this, MapaMesasActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Util.mensagemToast(this, getString(R.string.naopossuicaixaaberto));
+        }
     }
 
     @OnClick(R.id.btCadMenu)
@@ -125,9 +138,11 @@ public class MenuActivity extends AppCompatActivity {
         finish();
     }
 
-    @OnClick(R.id.btRelMenu)
-    public void relClick(){
-
+    @OnClick(R.id.btCaiMenu)
+    public void caixaClick(){
+        Intent intent = new Intent(this, CaixaActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @OnClick(R.id.btContasRecMenu)

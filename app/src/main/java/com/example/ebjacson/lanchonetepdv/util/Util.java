@@ -12,6 +12,8 @@ import com.example.ebjacson.lanchonetepdv.model.Usuario;
 import com.example.ebjacson.lanchonetepdv.model.Venda;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,5 +47,10 @@ public abstract class Util {
 
     public static void mensagemToast(Context context, String str){
         Toast.makeText(context, str, Toast.LENGTH_LONG).show();
+    }
+
+    public static String dataHoraParaString(Date data) {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        return df.format(data);
     }
 }

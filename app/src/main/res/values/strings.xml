@@ -58,4 +58,13 @@
     <string name="valorinsuficiente">Valor do recebimento é insuficiente!</string>
     <string name="credito">Crédito</string>
     <string name="debito">Débito</string>
+    <string name="caixa">Caixa</string>
+    <string name="abertura">Abertura</string>
+    <string name="saldo">Saldo</string>
+    <string name="abrir">Abrir</string>
+    <string name="fechar">Fechar</string>
+    <string name="possuimesasabertas">Você possui mesas abertas!</string>
+    <string name="naopossuicaixaaberto">Não possui caixa aberto!</string>
+    <string name="caixaaberto">Caixa foi aberto!</string>
+    <string name="caixafechado">Caixa foi fechado</string>
 </resources>

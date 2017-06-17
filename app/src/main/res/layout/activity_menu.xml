@@ -42,12 +42,12 @@
             android:textColor="@color/md_white_1000" />
 
         <Button
-            android:id="@+id/btRelMenu"
+            android:id="@+id/btCaiMenu"
             android:layout_width="170dp"
             android:layout_height="160dp"
             android:layout_column="0"
             android:layout_row="2"
-            android:text="@string/relatorios"
+            android:text="@string/caixa"
             android:background="@drawable/button_click"
             android:textColor="@color/md_white_1000" />
 

@@ -99,6 +99,9 @@
             android:name=".view.impl.RecebimentoActivity"
             android:label="@string/recebimento" />
         <activity
+            android:name=".view.impl.CaixaActivity"
+            android:label="@string/caixa" />
+        <activity
             android:name=".view.impl.MapaMesasActivity"
             android:label="@string/mapamesas"
             android:theme="@style/AppTheme.NoActionBar" />

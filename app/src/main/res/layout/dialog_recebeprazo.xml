@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCliRecebePrazo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvDataRecebePrazo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvCliRecebePrazo"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvDataRecebePrazo"
+            android:text="@string/venda" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView5"
+            android:text="@string/total" />
+
+        <TextView
+            android:id="@+id/tvTotalRecebePrazo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView5"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvVendaRecebePrazo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvTotalRecebePrazo"
+            android:layout_alignStart="@+id/tvTotalRecebePrazo"
+            android:text="TextView" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@color/md_blue_grey_100"
+        android:gravity="center|center_vertical"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rgpRecPrazo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtDinheiroRecPrazo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/dinheiro"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbtCreditoRecPrazo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/credito"
+                android:textColor="#FFFFFF" />
+
+            <RadioButton
+                android:id="@+id/rbtDebitoRecPrazo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/debito"
+                android:textColor="#FFFFFF" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:weightSum="1"
+        android:layout_below="@+id/relativeLayout2"
+        android:id="@+id/linearLayout14"
+        android:gravity="center|center_vertical"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:id="@+id/btCancelarDlgRecPrazo"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_click_rev"
+                android:layout_margin="1dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/salvar"
+                android:id="@+id/btSaveDlgRecPrazo"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_click_rev"
+                android:layout_margin="1dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

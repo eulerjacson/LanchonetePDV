@@ -106,6 +106,7 @@ public class DialogPrazoRec extends AlertDialog implements IDialogPrazoRec {
                         parcelaReceber.setJuroparrec(0.0);
                         parcelaReceber.setMultaparrec(0.0);
                         parcelaReceber.setValorparrec(venda.getVlrtotalven() / qtd);
+                        parcelaReceber.setStatusparrec(false);
                         parcelaReceber.save();
                     }
 

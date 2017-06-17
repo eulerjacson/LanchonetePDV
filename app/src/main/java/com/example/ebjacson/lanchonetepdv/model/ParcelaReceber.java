@@ -22,6 +22,7 @@ public class ParcelaReceber extends SugarRecord<ParcelaReceber> implements Seria
     private Double multaparrec;
     private Double valorparrec;
     private ContaReceber contaReceberId;
+    private Boolean statusparrec;
 
     public ParcelaReceber() {
     }
@@ -74,6 +75,14 @@ public class ParcelaReceber extends SugarRecord<ParcelaReceber> implements Seria
         this.contaReceberId = contaReceberId;
     }
 
+    public Boolean getStatusparrec() {
+        return statusparrec;
+    }
+
+    public void setStatusparrec(Boolean statusparrec) {
+        this.statusparrec = statusparrec;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -91,7 +100,9 @@ public class ParcelaReceber extends SugarRecord<ParcelaReceber> implements Seria
             return false;
         if (valorparrec != null ? !valorparrec.equals(that.valorparrec) : that.valorparrec != null)
             return false;
-        return contaReceberId != null ? contaReceberId.equals(that.contaReceberId) : that.contaReceberId == null;
+        if (contaReceberId != null ? !contaReceberId.equals(that.contaReceberId) : that.contaReceberId != null)
+            return false;
+        return statusparrec != null ? statusparrec.equals(that.statusparrec) : that.statusparrec == null;
 
     }
 
@@ -103,6 +114,7 @@ public class ParcelaReceber extends SugarRecord<ParcelaReceber> implements Seria
         result = 31 * result + (multaparrec != null ? multaparrec.hashCode() : 0);
         result = 31 * result + (valorparrec != null ? valorparrec.hashCode() : 0);
         result = 31 * result + (contaReceberId != null ? contaReceberId.hashCode() : 0);
+        result = 31 * result + (statusparrec != null ? statusparrec.hashCode() : 0);
         return result;
     }
 
@@ -115,6 +127,7 @@ public class ParcelaReceber extends SugarRecord<ParcelaReceber> implements Seria
                 ", multaparrec=" + multaparrec +
                 ", valorparrec=" + valorparrec +
                 ", contaReceberId=" + contaReceberId +
+                ", statusparrec=" + statusparrec +
                 '}';
     }
 }

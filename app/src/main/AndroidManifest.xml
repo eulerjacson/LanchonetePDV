@@ -105,6 +105,7 @@
             android:name=".view.impl.MapaMesasActivity"
             android:label="@string/mapamesas"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.impl.ContasRecActivity"></activity>
     </application>
 
 </manifest>

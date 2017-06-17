@@ -48,6 +48,7 @@ public class RecebimentoPresenter implements IRecebimentoPresenter {
         parcelaReceber.setJuroparrec(0.0);
         parcelaReceber.setMultaparrec(0.0);
         parcelaReceber.setValorparrec(venda.getVlrtotalven());
+        parcelaReceber.setStatusparrec(true);
 
         recebimento.setContaReceberId(contaReceber);
         recebimento.setParcelaReceberId(parcelaReceber);

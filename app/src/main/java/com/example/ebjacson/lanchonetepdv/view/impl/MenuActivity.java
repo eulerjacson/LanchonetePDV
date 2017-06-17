@@ -147,6 +147,8 @@ public class MenuActivity extends AppCompatActivity {
 
     @OnClick(R.id.btContasRecMenu)
     public void contasRecClick(){
-
+        Intent intent = new Intent(this, ContasRecActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

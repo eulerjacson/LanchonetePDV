@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.Cliente;
 import com.example.ebjacson.lanchonetepdv.model.IngItVenda;
 import com.example.ebjacson.lanchonetepdv.model.ItemVenda;
 import com.example.ebjacson.lanchonetepdv.model.Mesas;
@@ -93,7 +94,7 @@ public class MapaMesasAdapter extends BaseAdapter implements IMapaMesasAdapter{
     public void criaVenda(Mesas id) {
         Venda v = new Venda();
         v.setMesasId(id);
-        v.setClienteId(null);
+        v.setClienteId(Cliente.findById(Cliente.class, (long) 1));
         v.setUsuarioId(Util.usuario);
         v.setDataven(new Date());
         v.setStatusven(true);

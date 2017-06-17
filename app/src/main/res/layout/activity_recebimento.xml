@@ -1,0 +1,466 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout20"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_grey_100"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout7"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/subtotal"
+                android:id="@+id/textView35"
+                android:textSize="18dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvRecSubTotal"
+                android:textSize="20sp"
+                android:text="0,00"
+                android:layout_alignBottom="@+id/textView35"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_grey_100"
+            android:orientation="horizontal"
+            android:layout_below="@+id/linearLayout7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="1dp"
+            android:gravity="center_vertical"
+            android:id="@+id/relativeLayout4" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/desconto"
+                android:id="@+id/textView39"
+                android:textSize="18dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvRecDesc"
+                android:text="0,00"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_grey_100"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:id="@+id/relativeLayout5"
+            android:layout_below="@+id/relativeLayout4"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/total"
+                android:id="@+id/textView34"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvRecTotal"
+                android:text="0,00"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="5dp"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_grey_100"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/relativeLayout5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout3"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/receber"
+                android:id="@+id/textView37"
+                android:layout_alignTop="@+id/tvRecReceber"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvRecReceber"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="20dp"
+                android:text="0,00" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_blue_grey_100"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/relativeLayout2"
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/troco"
+                android:id="@+id/textView41"
+                android:layout_alignTop="@+id/tvRecTroco"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="5dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvRecTroco"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="20dp"
+                android:text="0,00"
+                android:layout_marginLeft="5dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout8"
+            android:gravity="center|center_vertical"
+            android:background="@color/md_blue_grey_100"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_alignParentStart="true">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/rgpRec">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dinheiro"
+                    android:id="@+id/rbtDinheiroRec"
+                    android:checked="true"
+                    android:textColor="#FFFFFF"/>
+
+                <RadioButton
+                    android:id="@+id/rbtCreditoRec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/credito"
+                    android:textColor="#FFFFFF" />
+
+                <RadioButton
+                    android:id="@+id/rbtDebitoRec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/debito"
+                    android:textColor="#FFFFFF" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout9"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/linearLayout8"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="7"
+                android:id="@+id/btRecSete"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="8"
+                android:id="@+id/btRecOito"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="9"
+                android:id="@+id/btRecNove"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:id="@+id/btRecDesc"
+                android:layout_width="95dp"
+                android:layout_height="65dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/linearLayout11"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_click"
+                android:text="@string/desconto"
+                android:textColor="@color/md_white_1000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout11"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/linearLayout9"
+            android:layout_alignRight="@+id/linearLayout9"
+            android:layout_alignEnd="@+id/linearLayout9"
+            android:layout_alignLeft="@+id/linearLayout9"
+            android:layout_alignStart="@+id/linearLayout9">
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="4"
+                android:id="@+id/btRecQuatro"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="5"
+                android:id="@+id/btRecCinco"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="6"
+                android:id="@+id/btRecSeis"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="3dp" />
+
+            <Button
+                android:layout_width="95dp"
+                android:layout_height="65dp"
+                android:text="@string/limpar"
+                android:id="@+id/btRecLimpar"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/button_click"
+                android:layout_above="@+id/linearLayout13"
+                android:layout_toLeftOf="@+id/btRecReceber"
+                android:layout_toStartOf="@+id/btRecReceber"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout10"
+            android:layout_below="@+id/linearLayout11"
+            android:gravity="center_vertical"
+            android:layout_alignLeft="@+id/linearLayout11"
+            android:layout_alignStart="@+id/linearLayout11">
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="1"
+                android:id="@+id/btRecUm"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="2"
+                android:id="@+id/btRecDois"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="3"
+                android:id="@+id/btRecTres"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="95dp"
+                android:layout_height="65dp"
+                android:text="@string/exato"
+                android:id="@+id/btRecExato"
+                android:textColor="@color/md_white_1000"
+                android:background="@drawable/button_click"
+                android:layout_alignTop="@+id/linearLayout11"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout12"
+            android:layout_below="@+id/linearLayout10"
+            android:gravity="center_vertical"
+            android:layout_alignLeft="@+id/linearLayout10"
+            android:layout_alignStart="@+id/linearLayout10">
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="0"
+                android:id="@+id/btRecZero"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:text="00"
+                android:id="@+id/btRecDoisZero"
+                android:textColor="@color/md_white_1000"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <ImageButton
+                android:layout_width="85dp"
+                android:layout_height="65dp"
+                android:src="@android:drawable/ic_input_delete"
+                android:id="@+id/imbRecApagar"
+                android:background="@color/md_blue_grey_400"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="2dp" />
+
+            <Button
+                android:id="@+id/btRecReceber"
+                android:layout_width="95dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/linearLayout11"
+                android:layout_toEndOf="@+id/linearLayout10"
+                android:layout_toRightOf="@+id/linearLayout10"
+                android:layout_weight="1"
+                android:background="@drawable/button_click_verde"
+                android:text="@string/receber"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

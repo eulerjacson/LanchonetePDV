@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etValorDesconto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:weightSum="1"
+        android:layout_below="@+id/relativeLayout2"
+        android:id="@+id/linearLayout14"
+        android:gravity="center|center_vertical"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:id="@+id/btCancelarDlgDesc"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_click_rev"
+                android:layout_margin="1dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/salvar"
+                android:id="@+id/btSaveDlgDesc"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/button_click_rev"
+                android:layout_margin="1dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

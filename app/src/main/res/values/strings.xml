@@ -44,4 +44,18 @@
     <string name="produtos">Produtos</string>
     <string name="contasrec">Contas a Receber</string>
     <string name="valor">Valor</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="desconto">Desconto</string>
+    <string name="receber">Receber</string>
+    <string name="total">Total</string>
+    <string name="moeda">Moeda</string>
+    <string name="troco">Troco</string>
+    <string name="dinheiro">Dinheiro</string>
+    <string name="cartao">Cartão</string>
+    <string name="limpar">Limpar</string>
+    <string name="exato">Exato</string>
+    <string name="recebimento">Recebimento</string>
+    <string name="valorinsuficiente">Valor do recebimento é insuficiente!</string>
+    <string name="credito">Crédito</string>
+    <string name="debito">Débito</string>
 </resources>

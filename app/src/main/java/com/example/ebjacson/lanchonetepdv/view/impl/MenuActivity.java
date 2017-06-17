@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.ebjacson.lanchonetepdv.R;
+import com.example.ebjacson.lanchonetepdv.model.Cliente;
 import com.example.ebjacson.lanchonetepdv.model.GrupoIng;
 import com.example.ebjacson.lanchonetepdv.model.GrupoObs;
 import com.example.ebjacson.lanchonetepdv.model.GrupoProduto;
@@ -40,6 +41,17 @@ public class MenuActivity extends AppCompatActivity {
 
         ////CADASTRO GENERICO
         if(Mesas.listAll(Mesas.class).size() == 0) {
+            Cliente cliente = new Cliente();
+            cliente.setNomecli("Consumidor Final");
+            cliente.setCpfcli("00000000000");
+            cliente.setEmailcli("consumidorfinal@gmail.com");
+            cliente.setBairrocli("");
+            cliente.setRuacli("");
+            cliente.setNumerocli("");
+            cliente.setStatuscli(true);
+            cliente.setCidadeId(null);
+            cliente.save();
+
             for (int x = 1; x < 15; x++) {
                 Mesas m = new Mesas();
                 m.setStatusmesa(0);

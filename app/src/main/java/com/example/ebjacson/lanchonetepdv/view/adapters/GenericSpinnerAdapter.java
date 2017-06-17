@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.ebjacson.lanchonetepdv.R;
 import com.example.ebjacson.lanchonetepdv.model.Cidade;
+import com.example.ebjacson.lanchonetepdv.model.Cliente;
 import com.example.ebjacson.lanchonetepdv.model.Estado;
 import com.example.ebjacson.lanchonetepdv.model.GrupoIng;
 import com.example.ebjacson.lanchonetepdv.model.GrupoObs;
@@ -67,6 +68,8 @@ public class GenericSpinnerAdapter extends BaseAdapter implements SpinnerAdapter
             holder.textViewSp.setText(((Estado) dao).getNomeest());
         } else if (dao instanceof Cidade) {
             holder.textViewSp.setText(((Cidade) dao).getNomecid());
+        } else if (dao instanceof Cliente) {
+            holder.textViewSp.setText(((Cliente) dao).getNomecli());
         }
 
         return itemView;

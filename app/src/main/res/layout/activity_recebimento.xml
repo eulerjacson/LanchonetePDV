@@ -441,14 +441,16 @@
                 android:layout_marginRight="3dp"
                 android:layout_marginBottom="2dp" />
 
-            <ImageButton
+            <Button
+                android:id="@+id/btRecPrazo"
                 android:layout_width="85dp"
                 android:layout_height="65dp"
                 android:src="@android:drawable/ic_input_delete"
-                android:id="@+id/imbRecApagar"
-                android:background="@color/md_blue_grey_400"
                 android:layout_marginRight="3dp"
-                android:layout_marginBottom="2dp" />
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/button_click_verde"
+                android:text="@string/prazo"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btRecReceber"

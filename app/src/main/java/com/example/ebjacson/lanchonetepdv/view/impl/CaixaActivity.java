@@ -84,9 +84,11 @@ public class CaixaActivity extends AppCompatActivity implements ICaixaActivity {
 
     @Override
     public void montaDadosCaixa(Double vlrdin, Double vlrcre, Double vlrdeb, Double vlrsaldo) {
-        tvNumCai.setText(getString(R.string.caixa) + " " + caixa.getId());
-        tvDataAbCai.setText(Util.dataHoraParaString(caixa.getDataabcai()));
-        tvVlrAbCai.setText(Util.doubleParaStringText(caixa.getVlrabcai()));
+        if(caixa != null) {
+            tvNumCai.setText(getString(R.string.caixa) + " " + caixa.getId());
+            tvDataAbCai.setText(Util.dataHoraParaString(caixa.getDataabcai()));
+            tvVlrAbCai.setText(Util.doubleParaStringText(caixa.getVlrabcai()));
+        }
         tvVlrDinCai.setText(Util.doubleParaStringText(vlrdin));
         tvVlrCreCai.setText(Util.doubleParaStringText(vlrcre));
         tvVlrDebCai.setText(Util.doubleParaStringText(vlrdeb));
@@ -103,10 +105,12 @@ public class CaixaActivity extends AppCompatActivity implements ICaixaActivity {
         Util.mensagemToast(this, getString(R.string.caixaaberto));
         caixaPresenter.buscarMovCaixaList();
         caixaPresenter.calcularFormasRec();
+        caixa = Util.caixa;
     }
 
     @Override
     public void mensagemFechou() {
         Util.mensagemToast(this, getString(R.string.caixafechado));
+        caixa = Util.caixa;
     }
 }

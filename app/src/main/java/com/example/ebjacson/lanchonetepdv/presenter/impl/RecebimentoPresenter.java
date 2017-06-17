@@ -44,14 +44,14 @@ public class RecebimentoPresenter implements IRecebimentoPresenter {
 
         parcelaReceber.setContaReceberId(contaReceber);
         parcelaReceber.setDataparrec(new Date());
-        parcelaReceber.setDescontoparrec(venda.getVlrdescven());
+        parcelaReceber.setDescontoparrec(0.0);
         parcelaReceber.setJuroparrec(0.0);
         parcelaReceber.setMultaparrec(0.0);
         parcelaReceber.setValorparrec(venda.getVlrtotalven());
 
         recebimento.setContaReceberId(contaReceber);
         recebimento.setParcelaReceberId(parcelaReceber);
-        recebimento.setDesconrec(venda.getVlrdescven());
+        recebimento.setDesconrec(0.0);
         recebimento.setJurorec(0.0);
         recebimento.setMultarec(0.0);
         recebimento.setValorfinalrec(venda.getVlrtotalven());
@@ -67,11 +67,14 @@ public class RecebimentoPresenter implements IRecebimentoPresenter {
         Mesas mesas = venda.getMesasId();
         mesas.setStatusmesa(0);
 
+        venda.setStatusven(false);
+
         contaReceber.save();
         parcelaReceber.save();
         recebimento.save();
         movCaixa.save();
         mesas.save();
+        venda.save();
 
         iRecebimentoActivity.callMapaMesasActivity();
     }

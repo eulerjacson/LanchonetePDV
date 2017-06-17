@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -73,8 +72,8 @@ public class RecebimentoActivity extends AppCompatActivity implements IRecebimen
     Button btRecZero;
     @BindView(R.id.btRecDoisZero)
     Button btRecDoisZero;
-    @BindView(R.id.imbRecApagar)
-    ImageButton imbRecApagar;
+    @BindView(R.id.btRecPrazo)
+    Button btRecPrazo;
     @BindView(R.id.btRecReceber)
     Button btRecReceber;
     @BindView(R.id.btRecDesc)
@@ -228,14 +227,10 @@ public class RecebimentoActivity extends AppCompatActivity implements IRecebimen
 
     }
 
-    @OnClick(R.id.imbRecApagar)
-    void clickRecApagar() {
-        String texto = tvRecReceber.getText().toString();
-        if (texto.length() > 0) {
-            String resultado = texto.substring(0, texto.length() - 1);
-            tvRecReceber.setText(resultado);
-        }
-        atualizaCalculo();
+    @OnClick(R.id.btRecPrazo)
+    void clickRecPrazo() {
+        DialogPrazoRec dialogPrazoRec = new DialogPrazoRec(this, this);
+        dialogPrazoRec.show();
     }
 
     @Override

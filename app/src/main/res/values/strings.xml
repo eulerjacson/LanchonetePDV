@@ -67,4 +67,7 @@
     <string name="naopossuicaixaaberto">Não possui caixa aberto!</string>
     <string name="caixaaberto">Caixa foi aberto!</string>
     <string name="caixafechado">Caixa foi fechado</string>
+    <string name="prazo">A Prazo</string>
+    <string name="selecionecli">Selecione um cliente</string>
+    <string name="digiteumvalorvalido">Digite um valor valido</string>
 </resources>
